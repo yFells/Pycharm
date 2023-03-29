@@ -1,0 +1,18 @@
+<!-- base.html -->
+<html>
+    <head>
+        <title>Produtos</title>
+        <link rel="stylesheet" href="static/css/product.css" />
+    </head>
+    <body class="body">
+        <h2 class="modern-form h3">Módulo de gerenciamento de produtos do Meu Restaurante</h2>
+        <ul>
+            <li class="modern-form"><a href="/product/regis">Registrar Produto</a></li>
+            <li class="modern-form"><a href="/product/ingredientes">Registrar Ingrediente</a></li>
+            <li class="modern-form"><a href="#">Ligar produto a ingredientes</a></li>
+        </ul>
+        <div id="content">
+            {% block content %} {% endblock %}
+        </div>
+    </body>
+</html>

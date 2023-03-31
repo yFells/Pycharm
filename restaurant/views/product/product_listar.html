@@ -1,0 +1,15 @@
+<!-- listarProdutos.html -->
+<html>
+    <head>
+        <title>Meus Produtos</title>
+    </head>
+    <body>
+        <h1>Produtos</h1>
+    <ul>
+        {% for produto_array in produto_array %}
+            <li>{{ produto_array }}</li>
+        {% endfor %}
+    </ul>
+        <p>Voltar para <a href="/">página inicial</a>!</p>
+    </body>
+</html>

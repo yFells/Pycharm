@@ -3,13 +3,29 @@
     <head>
         <title>Produtos</title>
         <link rel="stylesheet" href="static/css/product.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="static/css/style.css" />
     </head>
     <body class="body">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="static/img/170781.png" width="30" height="30" alt="">
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/base">Base</a>
+                <a class="nav-item nav-link" href="/product">Produtos</a>
+
+            </div>
+        </div>
+    </nav>
         <h2 class="modern-form h3">Módulo de gerenciamento de produtos do Meu Restaurante</h2>
         <ul>
-            <li class="modern-form"><a href="/product/regis">Registrar Produto</a></li>
-            <li class="modern-form"><a href="/product/ingredientes">Registrar Ingrediente</a></li>
-            <li class="modern-form"><a href="#">Ligar produto a ingredientes</a></li>
+            <li class="modern-form"><a href="/product/registrar">Registrar Produto</a></li>
+            <li class="modern-form"><a href="/product/ingredientes">Registrar Ingrediente a Produtos</a></li>
+            <li class="modern-form"><a href="/product/listar_produtos">Listar os produto</a></li>
         </ul>
         <div id="content">
             {% block content %} {% endblock %}

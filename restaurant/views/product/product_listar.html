@@ -2,15 +2,20 @@
 <html>
     <head>
         <title>Meus Produtos</title>
+        <link rel="stylesheet" href="static/css/product.css" />
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="static/css/style.css" />
     </head>
-    <body>
+    <body class="modern-form">
         <h1>Produtos</h1>
 
     <table>
 
             {% if produto_array |length > 0 %}
                 {% for produto in produto_array %}
-                <tr>
+                <tr class='float-label-field'>
                     <td>NOME</td>
                     <td>DESCRIÇÃO</td>
                     <td>VALOR</td>
@@ -18,7 +23,7 @@
                     <td>NOME INGREDIENTE</td>
                     <td>QUANTIDADE INGREDIENTE</td>
                 </tr>
-                 <tr>
+                 <tr class='float-label-field'>
                     <td>{{ produto_array[produto].get('name')}}</td>
                     <td>{{ produto_array[produto].get('descricao')}}</td>
                     <td>{{ produto_array[produto].get('valor')}}</td>
@@ -29,11 +34,12 @@
                 {% endfor %}
             {% else %}
             <tr>
-                <td>Ainda não existem pedidos registrados! Por favor registre</td>
+                <td class='float-label-field'>Ainda não existem pedidos registrados! Por favor registre</td>
             </tr>
         {% endif %}
 
     </table>
         <p>Voltar para <a href="/product">página inicial</a>!</p>
+    <script src="static/js/main.js" /></script>
     </body>
 </html>

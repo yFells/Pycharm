@@ -5,11 +5,30 @@
     </head>
     <body>
         <h1>Produtos</h1>
-    <ul>
-        {% for produto_array in produto_array %}
-            <li>{{ produto_array }}</li>
-        {% endfor %}
-    </ul>
+
+    <table>
+        <tr>
+            <td>NOME</td>
+            <td>DESCRIÇÃO</td>
+            <td>VALOR</td>
+            <td>QUANTIDADE</td>
+        </tr>
+            {% if produto_array |length > 0 %}
+                {% for produto in produto_array %}
+                 <tr>
+                    <td>{{ produto_array[produto].get('name')}}</td>
+                    <td>{{ produto_array[produto].get('descricao')}}</td>
+                    <td>{{ produto_array[produto].get('valor')}}</td>
+                    <td>{{ produto_array[produto].get('quantidade')}}</td>
+                 </tr>
+                {% endfor %}
+            {% else %}
+            <tr>
+                <td>Ainda não existem pedidos registrados!</td>
+            </tr>
+        {% endif %}
+
+    </table>
         <p>Voltar para <a href="/">página inicial</a>!</p>
     </body>
 </html>

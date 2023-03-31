@@ -8,27 +8,26 @@
 <body>
 <div class="modern-form">
     <h3>Registre o produto</h3>
-
+<form action="/product/registrar" id="info" name="info" method = "POST">
   <fieldset class='float-label-field'>
     <label for="product_name">Nome Produto</label>
-    <input id="product_name" type='text'>
+    <input id="product_name" name="product_name" type='text'>
   </fieldset>
-
   <fieldset class='float-label-field'>
     <label for="txt_descricao" >Descrição</label>
-    <input id="txt_descricao" type='text'>
+    <input id="txt_descricao" name="txt_descricao" type='text'>
   </fieldset>
  <fieldset class='float-label-field'>
     <label for="num_valor">Valor</label>
-    <input id="num_valor" type='text'>
+    <input id="num_valor" name="num_valor" type='text'>
   </fieldset>
   <fieldset class='float-label-field'>
     <label for="num_qtd">Quantidade</label>
-    <input id="num_qtd" type='text'>
+    <input id="num_qtd" name="num_qtd" type='text'>
   </fieldset>
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Registrar</button>
-</div>
+    <input type = "submit" value = "Enviar" />
+</form>
+  <div class="col-12"></div>
   </div>
 
 <script src="static/js/main.js" /></script>

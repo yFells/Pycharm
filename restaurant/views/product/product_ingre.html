@@ -6,21 +6,28 @@
     crossorigin="anonymous"></script>
 </head>
 <body>
+<form action="/product/regis_ingredientes" id="info" name="info" method = "POST">
 <div class="modern-form">
     <h3>Registre o produto</h3>
-
+    <label for="txtProduto">Qual Produto associar?</label>
+    <select id="txtProduto" name=txtProduto">
+        <option selected>Selecione o produto</option>
+        {% for item in registered %}
+        {{produto_array[produto].get('name')}}
+        <option value="{{produto_array[produto].get('name')}}">{{produto_array[produto].get('name')}}</option>
+    </select>
   <fieldset class='float-label-field'>
     <label for="txtName">Nome Ingrediente</label>
-    <input id="txtName" type='text'>
+    <input id="txtName" name='txtName' type='text'>
   </fieldset>
 
   <fieldset class='float-label-field'>
-    <label for="txtConfirmPassword">Quantidade</label>
-    <input id="txtConfirmPassword" type='text'>
+    <label for="txtQtd">Quantidade</label>
+    <input id="txtQtd" name='txtQtd' type='number'>
   </fieldset>
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Registrar</button>
-</div>
+    <input type = "submit" value = "Enviar" />
+</form>
+  <div class="col-12"></div>
   </div>
 
 <script src="static/js/main.js" /></script>

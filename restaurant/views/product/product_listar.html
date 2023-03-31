@@ -7,19 +7,24 @@
         <h1>Produtos</h1>
 
     <table>
-        <tr>
-            <td>NOME</td>
-            <td>DESCRIÇÃO</td>
-            <td>VALOR</td>
-            <td>QUANTIDADE</td>
-        </tr>
+
             {% if produto_array |length > 0 %}
                 {% for produto in produto_array %}
+                <tr>
+                    <td>NOME</td>
+                    <td>DESCRIÇÃO</td>
+                    <td>VALOR</td>
+                    <td>QUANTIDADE</td>
+                    <td>NOME INGREDIENTE</td>
+                    <td>QUANTIDADE INGREDIENTE</td>
+                </tr>
                  <tr>
                     <td>{{ produto_array[produto].get('name')}}</td>
                     <td>{{ produto_array[produto].get('descricao')}}</td>
                     <td>{{ produto_array[produto].get('valor')}}</td>
                     <td>{{ produto_array[produto].get('quantidade')}}</td>
+                    <td>{{ produto_array[produto].get('nomeIngrediente')}}</td>
+                     <td>{{ produto_array[produto].get('QtdIngrediente')}}</td>
                  </tr>
                 {% endfor %}
             {% else %}

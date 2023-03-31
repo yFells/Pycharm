@@ -22,7 +22,7 @@ def produto_registrar():
         quantidade = request.form['num_qtd']
         global registered
         id = len(registered) + 1
-        registered[id] = {'name':name, 'descricao': descricao, 'valor':valor,'quantidade':quantidade}
+        registered[id] = {'name':name, 'descricao': descricao, 'valor':valor,'quantidade':quantidade,'nomeIngrediente':None,'QtdIngrediente':None}
         #return registered
         return redirect("listar_produtos")
 
@@ -32,19 +32,26 @@ def produto_registrar():
 
 @product.route("/ingredientes", methods=['POST','GET'])
 def produto_ingredientes():
-    return render_template("/product/product_ingre.html", produto_array=registered)
+    return render_template("/product/product_ingre.html", registrado=registered )
 
 @product.route("/regis_ingredientes", methods=['POST','GET'])
 def produto_regis_ingredientes():
     if request.method == 'POST':
-        txtProduto = request.form['txtProduto']
         nomeIngrediente = request.form['txtName']
-        quantidade = request.form['txtQtd']
+        quantidade_ing = request.form['txtQtd']
+        #produto = request.form['txtProduto']
+        produto2 = request.form['te']
         global registered
         #numero diferente conforme meu valor da pagina
-        #id = len(registered) + 1
-        registered[txtProduto] = {'nomeIngrediente':nomeIngrediente,'QtdIngrediente':quantidade}
-        # return registered
+        for produto in registered:
+            if registered[produto].get('name') == produto2:
+                name = registered[produto].get('name')
+                descricao = registered[produto].get('descricao')
+                valor = registered[produto].get('valor')
+                quantidade = registered[produto].get('quantidade')
+
+                registered[produto] = {'name': name, 'descricao': descricao, 'valor': valor,'quantidade': quantidade, 'nomeIngrediente':nomeIngrediente,'QtdIngrediente':quantidade_ing }
+        #return registered
         return redirect("listar_produtos")
 
 @product.route("/listar_produtos", methods=['POST','GET'])

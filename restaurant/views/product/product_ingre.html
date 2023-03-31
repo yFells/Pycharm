@@ -9,13 +9,15 @@
 <form action="/product/regis_ingredientes" id="info" name="info" method = "POST">
 <div class="modern-form">
     <h3>Registre o produto</h3>
-    <label for="txtProduto">Qual Produto associar?</label>
-    <select id="txtProduto" name=txtProduto">
+    <label for="tem">Qual Produto associar?</label>
+    <select  id="tem" name="te">
         <option selected>Selecione o produto</option>
-        {% for item in registered %}
-        {{produto_array[produto].get('name')}}
-        <option value="{{produto_array[produto].get('name')}}">{{produto_array[produto].get('name')}}</option>
+        {% for item in registrado %}
+        {{registrado[item].get('name')}}
+        <option value="{{registrado[item].get('name')}}">{{registrado[item].get('name')}}</option>
+        {% endfor %}
     </select>
+
   <fieldset class='float-label-field'>
     <label for="txtName">Nome Ingrediente</label>
     <input id="txtName" name='txtName' type='text'>
@@ -26,9 +28,10 @@
     <input id="txtQtd" name='txtQtd' type='number'>
   </fieldset>
     <input type = "submit" value = "Enviar" />
+</div>
 </form>
   <div class="col-12"></div>
-  </div>
+
 
 <script src="static/js/main.js" /></script>
 </body>
